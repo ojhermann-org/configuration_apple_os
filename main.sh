@@ -1,0 +1,43 @@
+#!/usr/bin/env zsh
+
+function install-apps {
+	source ~/Documents/configuration_apple_os/apps/brew/install.sh
+
+	for dir in ~/Documents/configuration_apple_os/apps/*; do
+		if [[ -d "$dir" && "$(basename "$dir")" != "brew" ]]; then
+			for file in "$dir"/install.sh; do
+				source "$file"
+			done
+		fi
+	done
+}
+
+function setup-scripts {
+	for file in ~/Documents/configuration_apple_os/scripts/*sh; do
+		if [[ -f "$file" ]]; then
+			BF="$(basename "$file")"
+			F=${BF%.sh}
+			P="/usr/bin/$F"
+			if [[ ! -e "$P" ]]; then
+				ln -s "$file" "/usr/bin/$F"
+			fi
+		fi
+	done
+}
+
+function setup-aliases {
+	if [[ ! -f "~/.zshrc" ]]; then
+		touch ~/.zshrc
+	fi
+
+	COMMAND="source ~/Documents/configuration_apple_os/aliases.sh"
+	if ! grep -Fxq "$COMMAND" "~/.zshrc"; then
+		echo $COMMAND >>"~/.zshrc"
+	fi
+}
+
+install-apps
+setup-scripts
+setup-setup-aliases
+PROMPT="%F{yellow}%n@%m in %~ > %f"
+my-rpromt
