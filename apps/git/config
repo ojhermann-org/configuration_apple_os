@@ -1,0 +1,16 @@
+[alias]
+	cb = "!git rev-parse --abbrev-ref HEAD | pbcopy"
+	up = "!git remote update -p; git merge --ff-only @{u}"
+
+[init]
+	defaultBranch = "main"
+
+[pull]
+	ff = "only"
+
+[push]
+	autoSetupRemote = true
+
+[user]
+	email = "ojhermann@gmail.com"
+	name = "Otto Hermann"
