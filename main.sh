@@ -57,6 +57,10 @@ function setup-zsh {
 	source ~/Documents/configuration_apple_os/scripts/sudo-by-touch.sh
 }
 
+sudo scutil --set ComputerName "local-machine"
+sudo scutil --set LocalHostName "local-machine"
+sudo scutil --set HostName "local-machine"
+
 install-apps
 setup-scripts
 setup-zsh
