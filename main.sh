@@ -31,6 +31,13 @@ function setup-aliases {
 		touch ~/.zshrc
 	fi
 
+	AUTOCOMPLETE="autoload -Uz compinit
+	compinit"
+	COMMAND="$AUTOCOMPLETE"
+	if ! grep -qFz "$COMMAND" ~/.zshrc; then
+		echo $COMMAND >>~/.zshrc
+	fi
+
 	COMMAND="source ~/Documents/configuration_apple_os/aliases.sh"
 	if ! grep -Fxq "$COMMAND" ~/.zshrc; then
 		echo $COMMAND >>~/.zshrc
