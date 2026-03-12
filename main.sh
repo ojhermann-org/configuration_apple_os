@@ -26,7 +26,7 @@ function setup-scripts {
 	done
 }
 
-function setup-aliases {
+function setup-zsh {
 	if [[ ! -f "~/.zshrc" ]]; then
 		touch ~/.zshrc
 	fi
@@ -53,8 +53,10 @@ function setup-aliases {
 	if ! grep -Fxq "$COMMAND" ~/.zshrc; then
 		echo $COMMAND >>~/.zshrc
 	fi
+
+	source ~/Documents/configuration_apple_os/scripts/sudo-by-touch.sh
 }
 
 install-apps
 setup-scripts
-setup-aliases
+setup-zsh
