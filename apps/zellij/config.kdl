@@ -1,4 +1,5 @@
 copy_command "pbcopy"
+default_layout "basic"
 default_shell "zsh"
 show_start_up_tips false
 theme "kanagawa"
