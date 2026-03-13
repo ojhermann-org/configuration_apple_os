@@ -1,6 +1,5 @@
 layout {
-    cwd "~/Documents/configuration_apple_os"
-    tab name="main" focus=true hide_floating_panes=true {
+    tab name="basic" focus=true hide_floating_panes=true {
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"
         }
