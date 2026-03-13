@@ -12,4 +12,5 @@ function git-details {
 	fi
 }
 
-echo "%F{yellow}%n@%m %F{white}| %F{cyan}%~ %F{white}| %F{magenta}%D{%Y-%m-%d %H:%M:%S} $(git-details)%F{white}> %f"
+echo "%F{yellow}%n@%m %F{white}| %F{cyan}%~ %F{white}| %F{magenta}%D{%Y-%m-%d %H:%M:%S} $(git-details)
+%F{white}> %f"
