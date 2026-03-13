@@ -1,10 +1,16 @@
 #!/usr/bin/env zsh
 
 function install-apps {
-	source ~/Documents/configuration_apple_os/apps/brew/install.sh
+	source ~/Documents/configuration_apple_os/apps/git/install.sh
+
+	only_need_curl=("brew" "formae" "mise")
+	for dir in $only_need_curl; do
+		source ~/Documents/configuration_apple_os/apps/"$dir"/install.sh
+	done
 
 	for dir in ~/Documents/configuration_apple_os/apps/*; do
-		if [[ -d "$dir" && "$(basename "$dir")" != "brew" ]]; then
+		dir_name=$(basename "$dir")
+		if [[ "$dir_name" != "git" ]] && [[ ! " ${only_need_curl[@]} " =~ " $dir_name " ]]; then
 			for file in "$dir"/install.sh; do
 				source "$file"
 			done
