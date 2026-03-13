@@ -1,5 +1,5 @@
 [alias]
-	cb = "!git rev-parse --abbrev-ref HEAD | pbcopy"
+	cb = "!git rev-parse --abbrev-ref HEAD | tr -d '[:space:]' | pbcopy"
 	up = "!git remote update -p; git merge --ff-only @{u}"
 
 [init]
