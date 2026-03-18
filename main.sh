@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+# shellcheck shell=bash
 
 function install-apps {
 	source ~/Documents/configuration_apple_os/apps/git/install.sh

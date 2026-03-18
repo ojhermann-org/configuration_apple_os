@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+# shellcheck shell=bash
 
 function git-details {
 	branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
