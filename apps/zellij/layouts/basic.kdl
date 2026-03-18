@@ -9,13 +9,13 @@ layout {
                 start_suspended false
             }
             pane size="80%" {
-                pane command="claude" name="claude" size="32%" {
+                pane command="claude" name="claude" size="33%" {
                     start_suspended false
                 }
-                pane command="hx" name="hx" size="32%" {
+                pane command="hx" name="hx" size="33%" {
                     start_suspended false
                 }
-                pane name="zsh" focus=true size="35%" {
+                pane name="zsh" focus=true size="33%" {
 
                 }
             }
