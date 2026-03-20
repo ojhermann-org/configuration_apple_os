@@ -9,4 +9,8 @@ if ! command -v nix &>/dev/null; then
 	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 fi
 
+if [ ! -f ~/.config/home-manager/flake.nix ]; then
+	nix run home-manager/master -- init --switch
+fi
+
 print -P "%F{green}%B$APP%b: $APP has been installed%f"
