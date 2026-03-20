@@ -4,7 +4,7 @@
 function install-apps {
 	source ~/Documents/configuration_apple_os/apps/git/install.sh
 
-	only_need_curl=("brew" "formae" "mise")
+	only_need_curl=("brew" "formae" "mise" "nix")
 	for dir in $only_need_curl; do
 		source ~/Documents/configuration_apple_os/apps/"$dir"/install.sh
 	done
