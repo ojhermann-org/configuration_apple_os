@@ -13,4 +13,6 @@ if [ ! -f ~/.config/home-manager/flake.nix ]; then
 	nix run home-manager/master -- init --switch
 fi
 
+home-manager switch --flake github:ojhermann/home-manager#otto@aarch64-darwin --refresh
+
 print -P "%F{green}%B$APP%b: $APP has been installed%f"
