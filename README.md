@@ -1,5 +1,7 @@
 # configuration_apple_os
 
+note: I'm opting to go for nix + home-manager and will modify this repo, over time, to reflect this; it will work for most linux and mac machines I use.
+
 ## what
 
 [Zsh](https://www.zsh.org/) scripting to get an Apple machine set up for basic development
