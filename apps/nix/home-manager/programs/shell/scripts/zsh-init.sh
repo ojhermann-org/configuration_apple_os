@@ -1,9 +1,5 @@
-#!/usr/bin/env zsh
-# shellcheck shell=bash
-
 function git-details {
 	branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
-
 	if [[ -z "$branch" ]]; then
 		echo ""
 	elif git status --porcelain 2>/dev/null | grep -q .; then
@@ -12,6 +8,6 @@ function git-details {
 		echo "%F{white}| %F{green}⎇ ${branch} %f"
 	fi
 }
-
-echo "%F{yellow}%n@%m %F{white}| %F{cyan}%~ %F{white}| %F{magenta}%D{%Y-%m-%d %H:%M:%S} $(git-details)
-%F{white}> %f"
+setopt PROMPT_SUBST
+export PROMPT='%F{yellow}%n@%m %F{white}| %F{cyan}%~ %F{white}| %F{magenta}%D{%Y-%m-%d %H:%M:%S} $(git-details)
+%F{white}> %f'
