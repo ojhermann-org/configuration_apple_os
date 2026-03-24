@@ -1,15 +1,19 @@
 # configuration_apple_os
 
-note: I'm opting to go for nix + home-manager and will modify this repo, over time, to reflect this; it will work for most linux and mac machines I use.
-
 ## what
 
-[Zsh](https://www.zsh.org/) scripting to get an Apple machine set up for basic development
+A simple way to get an Apple machine set up.
 
 ## why
 
-I need something that works for an individual user on an arbitrary Apple machine; basic `Zsh` scripting provides this on even under very stringent security set ups; I would prefer to use `Nix` like I do on [EC2 instances](https://github.com/ojhermann/nix-os-ec2)
+I do this fairly often and would like to have a basic set of tooling available to me
 
 ## how
 
-I've created some `Zsh` scripts to install an configure a few applications, scripts, and related matters; to use this repo, copy it to the `Documents` folder on your Apple machine and then execute `main.sh`
+### installation
+
+`./apps/install.sh`: this will install the apps and configure [Home Manager](https://nix-community.github.io/home-manager/) via [home-manager](https://github.com/ojhermann/home-manager)
+
+### regular use
+
+Type `switch` into the terminal to propagate changes from `home-manager`
