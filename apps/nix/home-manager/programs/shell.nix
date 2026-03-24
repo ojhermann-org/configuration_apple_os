@@ -30,7 +30,7 @@ in
       ignoreDups = true;
     };
     shellAliases = commonAliases;
-    initExtra = builtins.readFile ./shell/scripts/zsh-init.sh;
+    initContent = builtins.readFile ./shell/scripts/zsh-init.sh;
   };
 
   programs.bash = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {

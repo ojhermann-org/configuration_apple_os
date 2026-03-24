@@ -81,6 +81,8 @@ in
   #
   #  /etc/profiles/per-user/otto/etc/profile.d/hm-session-vars.sh
   #
+  home.sessionPath = [ "/opt/pel/formae/bin" ];
+
   home.sessionVariables = {
     EDITOR = "hx";
     VISUAL = config.home.sessionVariables.EDITOR;
