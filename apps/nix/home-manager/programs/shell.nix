@@ -10,9 +10,9 @@ let
     runtimeInputs = [ pkgs.git pkgs.watchexec gst ];
     text = ''
       if git rev-parse --git-dir >/dev/null 2>&1; then
-        watchexec -c --watch "." --watch ".git/index" --watch ".git/HEAD" "--no-vcs-ignore" -i ".git/objects/**" -i ".git/logs/**" -- gst
+        watchexec -c --watch "." --watch ".git/index" --watch ".git/HEAD" "--no-vcs-ignore" -i ".git/objects/**" -i ".git/logs/**" -- ${gst}/bin/gst
       else
-        watchexec -c --watch "." -- gst
+        watchexec -c --watch "." -- ${gst}/bin/gst
       fi
     '';
   };
