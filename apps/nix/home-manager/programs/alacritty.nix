@@ -9,14 +9,6 @@
       mouse.hide_when_typing = true;
 
       window.startup_mode = "Fullscreen";
-
-      keyboard.bindings = [
-        {
-          key = "Return";
-          mods = "Shift";
-          chars = "\u001B\r";
-        }
-      ];
     };
   };
 }
