@@ -13,6 +13,8 @@ let
     lib.lists.map import nixFiles;
 in
 {
+  nixpkgs.config.allowUnfree = true;
+
   home.username = username;
   home.homeDirectory = if pkgs.stdenv.hostPlatform.isDarwin then homeDirectoryApple else homeDirectoryLinux;
 
